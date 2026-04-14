@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Sevcom</title>
+</head>
+
+    <nav class="navbar">
+        <div class="container navbar__content">
+            <a href="index.html" class="logo">
+                <img src="assets/Sevcom-logo-2.png" alt="Sevcom">
+            </a>
+            <div class="nav-links">
+                <a href="#">Solutions</a>
+                <a href="#">Payroll</a>
+                <a href="#">Cloud Accounting</a>
+                <a href="#">About Us</a>
+            </div>
+            <div class="nav-actions">
+                <span class="contact-phone">PH +63 928 949 0050</span>
+                <button class="btn btn--primary">
+                    <a href="https://sevcompayroll.azurewebsites.net/login?fbclid=IwY2xjawRCx4lleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeeMoMI2OO45V3d7SuAqnM9kovTxVOCaUNQ8nyCyGxVzjNi9mRNELlqoAdHJg_aem_DpH7WtdkefcHEIQQjBS0Dg">Client Login</a>
+                </button>
+
+                <button class="btn btn--primary">
+                    <a href="form.html">Inquire</a>
+                </button>
+
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M16 16s-1.5 2-4 2-4-2-4-2"></path>
+                    <path d="M12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="content-section-form" style="background: var(--light-bg);">
+            <div class="container-form">
+                <h2>Send Us a Message</h2>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">
+                    Have questions? Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+
+                <form style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px;">
+                    <div class="form-group-form">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required="">
+                    </div>
+
+                    <div class="form-group-form">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required="">
+                    </div>
+
+                    <div class="form-group-form">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group-form">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required="">
+                            <option value="">Select a subject...</option>
+                            <option value="employment">Employment Inquiry</option>
+                            <option value="employer">Employer Inquiry</option>
+                            <option value="support">Deployment Support</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-form">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Please enter your message..." required=""></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-form btn-primary-form" style="width: 100%; padding: 1rem;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+<body>
+    
+</body>
+</html>
