@@ -34,6 +34,12 @@
         --border-radius-lg: 0.75rem;
         --border-radius-nav: 0.2rem;
         --transition: 0.2s ease;
+        --color-dark: #0F172A;
+        --color-slate: #475569;
+        --white: #FFFFFF;
+        --bg-light: #F8FAFC;
+        --transition-cell: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
     * {
@@ -743,6 +749,7 @@ button {
     text-align: center;
     color: #1e293b;
     margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .section-description {
@@ -3151,16 +3158,16 @@ button {
         /* =========================================
            1. VARIABLES & RESET
            ========================================= */
-        :root {
-            --color-primary: #3DA1C1;   /* Sevcom Blue */
-            --color-secondary: #B1D25D; /* Sevcom Green */
+        /* :root {
+            --color-primary: #3DA1C1;
+            --color-secondary: #B1D25D;
             --color-dark: #0F172A;
             --color-slate: #475569;
             --white: #FFFFFF;
             --bg-light: #F8FAFC;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
+        } */
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -3274,6 +3281,24 @@ button {
     padding: 40px 20px;
 }
 
+.container-form-ver2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 40px 20px; */
+}
+
+.form-style {
+    max-width: 600px; 
+    margin: 0 auto; 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 8px;
+}
+
+.required {
+    color: red;
+}
+
 /* Typography */
 .content-section-form h2 {
     font-size: 2.5rem;
@@ -3344,3 +3369,355 @@ button {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 /* End Form */
+
+/* =========================================
+   3. NEW CLASSES - WHAT WE OFFER SECTION
+   ========================================= */
+
+/* =========================================
+   WHAT WE OFFER SECTION - NEW CLASSES
+   =========================================
+   
+   REUSED EXISTING CLASSES:
+   - .container
+   - .section-title-center
+   - .section-description-center
+   - .btn
+   
+   NEW CLASSES ADDED:
+   - .offers-section
+   - .offers-grid (MODIFIED: 2-column layout)
+   - .offer-card
+   - .offer-icon
+   - .offer-title
+   - .offer-description
+   - .offer-link
+   - .offer-arrow
+   - .offers-cta
+   - .btn-cta
+   
+   ========================================= */
+
+/* NEW: Section Wrapper */
+.offers-section {
+    padding: 5rem 0;
+    background-color: var(--color-bg);
+}
+
+/* NEW: Section Header Center (if not already exists) */
+.section-header-center {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* NEW/MODIFIED: Offerings Grid - 2 columns responsive (changed from 3 columns) */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* NEW: Offer Card */
+.offer-card {
+    background: white;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    transition: all var(--transition-cell);
+}
+
+.offer-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* NEW: Offer Icon */
+.offer-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.offer-icon svg {
+    width: 2rem;
+    height: 2rem;
+    stroke: white;
+}
+
+/* NEW: Offer Title */
+.offer-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+
+/* NEW: Offer Description */
+.offer-description {
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+
+/* NEW: Offer Link */
+.offer-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-cell);
+}
+
+.offer-link:hover {
+    text-decoration: underline;
+}
+
+/* NEW: Offer Arrow (animated on hover) */
+.offer-arrow {
+    margin-left: 0.25rem;
+    transition: margin-left var(--transition-cell);
+}
+
+.offer-card:hover .offer-arrow {
+    margin-left: 0.5rem;
+}
+
+/* NEW: Offers CTA Wrapper */
+.offers-cta {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* NEW: CTA Button (uses secondary color) */
+.btn-cta {
+    background: var(--color-secondary);
+    color: white;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-lg);
+    text-decoration: none;
+    transition: all var(--transition-cell);
+}
+
+.btn-cta:hover {
+    background: white;
+    color: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+/* End what we offer section */
+
+/* Version 2 */
+/* =========================================
+   FEATURE SECTIONS VER2 - REVISED CLASSES
+   =========================================
+   
+   CHANGES FROM ORIGINAL:
+   - Compressed side padding
+   - Darker paragraph text
+   - "Learn More" as smaller button
+   - Unique subtle backgrounds per feature-item
+   
+   ========================================= */
+
+/* -----------------------------------------
+   CLASS: .feature-sections-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Section wrapper
+   ----------------------------------------- */
+.feature-sections-ver2 {
+    padding: 4rem 0;
+}
+
+/* -----------------------------------------
+   CLASS: .feature-item-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Feature row with compressed side padding
+   CHANGE: Reduced padding from 3rem to 1.5rem on sides
+   ----------------------------------------- */
+.feature-item-ver2 {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+    margin-bottom: 0; /* CHANGED: Removed margin, backgrounds touch */
+}
+
+/* -----------------------------------------
+   CLASS: .feature-item-reverse-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Reverses flex direction for alternating layout
+   ----------------------------------------- */
+.feature-item-reverse-ver2 {
+    flex-direction: row-reverse;
+}
+
+/* -----------------------------------------
+   CLASSES: .feature-bg-1 to .feature-bg-6
+   TYPE: NEW (ver2)
+   DESCRIPTION: Unique subtle backgrounds for each feature-item
+   ----------------------------------------- */
+.feature-bg-1 {
+    background-color: #f9fafb; /* Gray 50 */
+}
+
+.feature-bg-2 {
+    background-color: #f3f4f6; /* Gray 100 */
+}
+
+.feature-bg-3 {
+    background-color: #f9fafb; /* Gray 50 */
+}
+
+.feature-bg-4 {
+    background-color: #f3f4f6; /* Gray 100 */
+}
+
+.feature-bg-5 {
+    background-color: #f9fafb; /* Gray 50 */
+}
+
+.feature-bg-6 {
+    background-color: #f3f4f6; /* Gray 100 */
+}
+
+/* -----------------------------------------
+   CLASS: .feature-content-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Content container
+   ----------------------------------------- */
+.feature-content-ver2 {
+    flex: 1;
+}
+
+/* -----------------------------------------
+   CLASS: .feature-icon-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Icon container with primary background
+   ----------------------------------------- */
+.feature-icon-ver2 {
+    width: 4rem;
+    height: 4rem;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon-ver2 svg {
+    stroke: white;
+}
+
+/* -----------------------------------------
+   CLASS: .feature-title-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Feature heading
+   ----------------------------------------- */
+.feature-title-ver2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+/* -----------------------------------------
+   CLASS: .feature-description-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Paragraph text with darker color
+   CHANGE: Color changed from --color-text-light to #374151 (darker)
+   ----------------------------------------- */
+.feature-description-ver2 {
+    color: #374151; /* DARKER: was var(--color-text-light) / #64748b */
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* -----------------------------------------
+   CLASS: .btn-feature-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Smaller button style for "Learn More"
+   CHANGE: Changed from link to compact button
+   ----------------------------------------- */
+.btn-feature-ver2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem; /* SMALLER: compact padding */
+    font-size: 0.875rem; /* SMALLER: 14px */
+    font-weight: 500;
+    color: white;
+    background: var(--color-primary);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-feature-ver2:hover {
+    background: #2d8aa8; /* Darker shade of primary */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(61, 161, 193, 0.3);
+}
+
+/* -----------------------------------------
+   CLASS: .feature-image-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Image container
+   ----------------------------------------- */
+.feature-image-ver2 {
+    flex: 1;
+}
+
+/* -----------------------------------------
+   CLASS: .image-placeholder-ver2
+   TYPE: NEW (ver2)
+   DESCRIPTION: Placeholder for images
+   ----------------------------------------- */
+.image-placeholder-ver2 {
+    background: var(--color-border);
+    border-radius: var(--border-radius-lg);
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+}
+
+/* -----------------------------------------
+   RESPONSIVE: Mobile Styles
+   ----------------------------------------- */
+@media (max-width: 768px) {
+    .feature-item-ver2,
+    .feature-item-reverse-ver2 {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+    
+    .feature-image-ver2 {
+        order: -1;
+    }
+}
+/* End of Version 2 */
